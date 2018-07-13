@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: django
-          image: django_incubator_web:django_web
+          image: oltidev/django_incubator_web
           ports:
             - containerPort: 8000
