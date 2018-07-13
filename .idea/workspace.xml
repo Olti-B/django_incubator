@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb60fe95-0386-41e9-9948-668d6e100d21" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/deploy/service_deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy/django_deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/django_deploy.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/service_deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/service_deployment.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -92,14 +89,18 @@
         <entry file="file://$PROJECT_DIR$/deploy/django_deploy.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret selection-end-column="24" />
+              <caret selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="service_deployment.yaml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deploy/service_deployment.yaml">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -145,8 +146,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="866" />
-    <option name="y" value="100" />
+    <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -221,6 +221,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14225501" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -585,12 +586,16 @@
     <entry file="file://$PROJECT_DIR$/deploy/django_deploy.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret selection-end-column="24" />
+          <caret selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deploy/service_deployment.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
