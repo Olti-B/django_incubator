@@ -29,11 +29,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'ai_system',
-    'business',
     'farmers',
-    'info_plants',
-    'register_plants',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
