@@ -28,3 +28,11 @@ def plant_register(req):
 
 def profile(req):
     return render(req, 'farmers/profile.html')
+
+
+def login(req):
+    return render(req, 'farmers/login.html')
+
+
+def reset(req):
+    return render(req, 'farmers/reset.html')

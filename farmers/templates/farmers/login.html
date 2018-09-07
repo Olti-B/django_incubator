@@ -1,0 +1,38 @@
+{% extends "farmers/headerfooter.html" %}
+
+{% block content %}
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+
+    <div class="login-form">
+        <div class="main-div">
+            <div class="panel">
+                <h2>User Login</h2>
+                <p>Please enter your email and password</p>
+            </div>
+            <form id="Login" method="post" action="">
+
+                <div class="form-group">
+
+
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+
+                </div>
+
+                <div class="form-group">
+
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+
+                </div>
+                <div class="forgot">
+                    <a href="/reset">Forgot password?</a>
+                </div>
+                <button type="submit"  class="btn btn-outline-white btn-rounded "><i class="fa fa-clone left"></i> Login</button>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+</div>
+{% endblock %}
