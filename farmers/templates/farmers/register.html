@@ -3,7 +3,7 @@
 {% block content %}
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
 
-    <form class="form-horizontal" action='' method="POST">
+    <form class="form-horizontal" action='/register' method="POST">
 
         {% csrf_token %}
 
@@ -40,7 +40,25 @@
 
             <div class="control-group">
                 <!-- Password-->
-                <label class="control-label" for="password">Password</label>
+                <label class="control-label" >Numri i telefonit</label>
+                <div class="controls">
+                    <input type="number" id="phone" name="phone" placeholder="+355" class="input-xlarge">
+                    <p class="help-block">Numri i telefonit </p>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Password-->
+                <label class="control-label" >Qyteti</label>
+                <div class="controls">
+                    <input type="text" id="city" name="city" placeholder="" class="input-xlarge">
+                    <p class="help-block">Qyteti ku prodhoni </p>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Password-->
+                <label class="control-label" >Password</label>
                 <div class="controls">
                     <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
                     <p class="help-block">Passwordi duhet te jet me i gjate se 4 karaktere</p>
@@ -60,9 +78,9 @@
             <div class="control-group">
                 <!-- Button -->
                 <div class="controls">
-                    <button class="btn btn-success">Rregjistrohu</button>
+                    <button class="btn btn-success" type="submit" value="submit">Rregjistrohu</button>
                 </div>
-                  <div class="controls">
+                <div class="controls">
                     <a href="/login" class="btn btn-success">Hyr</a>
                 </div>
             </div>
