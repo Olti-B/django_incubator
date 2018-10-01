@@ -40,7 +40,7 @@
 
             <div class="control-group">
                 <!-- Password-->
-                <label class="control-label" >Numri i telefonit</label>
+                <label class="control-label">Numri i telefonit</label>
                 <div class="controls">
                     <input type="number" id="phone" name="phone" placeholder="+355" class="input-xlarge">
                     <p class="help-block">Numri i telefonit </p>
@@ -49,7 +49,7 @@
 
             <div class="control-group">
                 <!-- Password-->
-                <label class="control-label" >Qyteti</label>
+                <label class="control-label">Qyteti</label>
                 <div class="controls">
                     <input type="text" id="city" name="city" placeholder="" class="input-xlarge">
                     <p class="help-block">Qyteti ku prodhoni </p>
@@ -58,7 +58,7 @@
 
             <div class="control-group">
                 <!-- Password-->
-                <label class="control-label" >Password</label>
+                <label class="control-label">Password</label>
                 <div class="controls">
                     <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
                     <p class="help-block">Passwordi duhet te jet me i gjate se 4 karaktere</p>
@@ -72,7 +72,8 @@
                     <input type="password" id="password_confirm" name="password_confirm" placeholder=""
                            class="input-xlarge">
                     <p class="help-block">Please konfirmoni password-in</p>
-                </div>
+
+                        <span>{{ error_password_conf }}</span>
             </div>
 
             <div class="control-group">

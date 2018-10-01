@@ -93,8 +93,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'incubator',
-        'USER': 'olti',
-        'PASSWORD': 'olti',
+        # Work
+        # 'USER': 'olti',
+        # 'PASSWORD': 'olti',
+
+        # Home
+        'USER': 'postgres',
+        'PASSWORD': 'oltiolti',
         'HOST': 'localhost',
         'PORT': '5432',
     }

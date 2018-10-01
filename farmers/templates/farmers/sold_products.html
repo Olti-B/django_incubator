@@ -1,7 +1,6 @@
 {% extends "farmers/headerfooter.html" %}
 
 {% block content %}
-
 <div class="mb-2">
     <nav class="navbar header-top fixed-top navbar-expand-lg  ">
         <span class="navbar-toggler-icon leftmenutrigger"></span>
@@ -22,33 +21,4 @@
         </div>
     </nav>
 </div>
-
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
-                <h1 class="title">My Post </h1>
-            </div>
-        </div>
-        <div class="row">
-
-        </div>
-    </div>
-
-</div>
-
-
-</div>
-<script>
-$( document ).ready(function() {
-   $('.leftmenutrigger').on('click', function(e) {
-       $('.side-nav').toggleClass("open");
-       e.preventDefault();
-   });
-});
-
-
-
-</script>
-{% endblock %}
+{% endblock%}
