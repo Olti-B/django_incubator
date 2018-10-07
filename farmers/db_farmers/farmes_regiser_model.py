@@ -1,6 +1,6 @@
 from django.utils import timezone
-
 from django.db import models
+from incubator import settings
 
 
 class FarmesRegistraton(models.Model):
@@ -13,8 +13,14 @@ class FarmesRegistraton(models.Model):
     date = models.DateTimeField(timezone.now())
 
 
-class SoldProducts(models.Model):
+class SoldProduct(models.Model):
     date = models.DateTimeField(timezone.now())
 
-class PostProducts(models.Model):
+
+class PostProduct(models.Model):
+    title = models.CharField(max_length=45)
+    email = models.CharField(max_length=45)
+    description = models.CharField(max_length=225)
+    content = models.CharField(max_length=225)
+    image = models.ImageField(upload_to='farmers_post', blank=True)
     date = models.DateTimeField(timezone.now())

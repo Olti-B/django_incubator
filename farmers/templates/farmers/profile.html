@@ -2,51 +2,208 @@
 
 {% block content %}
 
-<div class="mb-2">
-    <nav class="navbar header-top fixed-top navbar-expand-lg  ">
-        <span class="navbar-toggler-icon leftmenutrigger"></span>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                aria-controls="navbarText"
-                aria-expanded="false" aria-label="Toggle navigation">
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav animate side-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/make_post">Make Post</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/sold_products">Sold Products</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
-
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
-                <h1 class="title">My Post </h1>
-            </div>
-        </div>
-        <div class="row">
+            <div class="col-sm-3"><!--left col-->
 
-        </div>
-    </div>
+                <div class="text-center">
+                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail"
+                         alt="avatar">
+                </div>
+                </hr><br>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125
+                    </li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78
+                    </li>
+                </ul>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Social Media</div>
+                    <div class="panel-body">
+                        <i class="fa fa-facebook fa-2x"></i>
+                        <i class="fa fa-github fa-2x"></i>
+                        <i class="fa fa-twitter fa-2x"></i>
+                        <i class="fa fa-pinterest fa-2x"></i>
+                        <i class="fa fa-google-plus fa-2x"></i>
+                    </div>
+                </div>
+
+            </div><!--/col-3-->
+            <div class="col-9">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#myPost">Make Posts</a></li>
+                    <li><a data-toggle="tab" href="#historic">Historic</a></li>
+                    <li><a data-toggle="tab" href="#caclculation">Calculation</a></li>
+                </ul>
+
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="myPost">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <h4>Make Post</h4>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <form action="/make_post" method="post">
+
+                                                {% csrf_token %}
+
+                                                <div class="form-group row">
+                                                    <label for="title" class="col-12 col-form-label">Enter Title
+                                                        here</label>
+                                                    <div class="col-12">
+                                                        <input id="title" name="title" placeholder="Enter Title here"
+                                                               class="form-control here" required="required"
+                                                               type="text">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="description" class="col-12 col-form-label">Enter
+                                                        Description</label>
+                                                    <div class="col-12">
+                                                        <input id="description" name="description"
+                                                               placeholder="Enter description"
+                                                               class="form-control here"
+                                                               type="text">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <label for="photo" class="col-12 col-form-label">Enter Photo
+                                                        here</label>
+                                                    <div class="col-12">
+                                                        <input id="photo" name="photo" accept="image/*"
+                                                               class="form-control here btn-primary"
+                                                               type="file">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <label for="content" class="col-12 col-form-label">Enter content
+                                                        here</label>
+                                                    <div class="col-12">
+                                                        <textarea id="content" name="content" cols="40" rows="5"
+                                                                  class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-12">
+                                                    <button type="submit" value="submit" class="btn btn-primary">Add
+                                                        New
+                                                    </button>
+                                                </div>
+
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane" id="historic">
+                        {% for post in myPost%}
+
+
+                        <div class="card  mr-md-3 text-center overflow-hidden" style="border-radius: 21px ;">
+                            <div class="view overlay">
+                                <img src="./media/{{post.image}}" class="img-fluid"
+                                     alt=""
+                                     style="border-radius: 21px  21px  0 0;">
+                                <a href="#">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <div class="card-body text-center mb-3">
+                                <h3 class="card-title mt-2 pb-4"><strong>{{post.title}}</strong></h3>
+                                <h6 class="card-title mt-2 pb-4"><strong>{{post.description}}</strong></h6>
+                                <p class="card-text">{{post.content}}
+                                </p>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        {% endfor %}
+                    </div>
+                    <div class="tab-pane" id="caclculation">
+
+                    </div>
+
+                </div><!--/tab-pane-->
+            </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+</div>
 
 </div>
 
 
 </div>
 <script>
-$( document ).ready(function() {
-   $('.leftmenutrigger').on('click', function(e) {
-       $('.side-nav').toggleClass("open");
-       e.preventDefault();
-   });
-});
+
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
