@@ -88,6 +88,7 @@ def make_post(req):
         description = req.POST.get("description")
         content = req.POST.get("content")
         image = req.POST.get('photo')
+        print(image)
 
         if len(title) != 0 and len(email) != 0 and len(description) != 0 and len(content) != 0:
             post_product = PostProduct(title=title, email=email, description=description, content=content, image=image,

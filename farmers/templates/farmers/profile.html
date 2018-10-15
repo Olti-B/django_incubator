@@ -58,7 +58,7 @@
                                     <hr>
                                     <div class="row">
                                         <div class="col-12">
-                                            <form action="/make_post" method="post">
+                                            <form action="/make_post" method="post" >
 
                                                 {% csrf_token %}
 
@@ -126,7 +126,7 @@
 
                         <div class="card  mr-md-3 text-center overflow-hidden" style="border-radius: 21px ;">
                             <div class="view overlay">
-                                <img src="./media/{{post.image}}" class="img-fluid"
+                                <img src="/{{post.image}}" class="img-fluid"
                                      alt=""
                                      style="border-radius: 21px  21px  0 0;">
                                 <a href="#">
