@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from farmers.db_farmers.farmes_regiser_model import FarmesRegistraton, PostProduct
 from farmers.db_interactions.farmer_blog_post import RetriveAllPostByFarmer
+import json, jwt
 
 
 def index(req):
@@ -70,7 +71,7 @@ def login(req):
                 # Make some handeler
                 if FarmesRegistraton.objects.filter(email=email, password=password):
                     user = FarmesRegistraton.objects.filter(email=email, password=password)[0]
-                    req.session['user'] = user.id_reg_farmer
+
                     return render(req, 'farmers/profile.html')
 
     return render(req, 'farmers/login.html')
@@ -87,19 +88,20 @@ def make_post(req):
         title = req.POST.get("title")
         description = req.POST.get("description")
         content = req.POST.get("content")
-        image = req.POST.get('photo')
-        print(image)
+        image = req.FILES['photo']
 
         if len(title) != 0 and len(email) != 0 and len(description) != 0 and len(content) != 0:
             post_product = PostProduct(title=title, email=email, description=description, content=content, image=image,
                                        date=timezone.now())
             post_product.save()
             return render(req, 'farmers/profile.html',
-                          {'myPost': RetriveAllPostByFarmer(email=email).get_all_post_made_by_user()})
+                          {'myPost': RetriveAllPostByFarmer(email=email).get_all_post_made_by_user()}
+                          )
 
     # ToDo Get from jwt the email
     return render(req, 'farmers/profile.html',
-                  {'myPost': RetriveAllPostByFarmer(email=email).get_all_post_made_by_user()})
+                  {'myPost': RetriveAllPostByFarmer(email=email).get_all_post_made_by_user()}
+                  )
 
 
 def sold_products(req):
